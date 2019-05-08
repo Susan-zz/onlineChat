@@ -1,0 +1,100 @@
+body{
+    background-image: url(./background2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 22px;
+}
+#chatMsg{
+    margin-left: 1260px;
+    margin-top: 100px;
+    width: 200px;
+    height: 50px;
+    background: #272727;
+    color: aliceblue;
+}
+#userName{
+    width: 150px;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 10px;
+}
+#signOut{
+    margin-left: 150px;
+    height: 50px;
+    background-color: #3C3C3C;
+    font-size: 18px;
+    line-height: 50px;
+}
+#chatRoom{
+    width: 700px;
+    height: 600px;
+    margin-left: 450px;
+    margin-top: 50px;
+    position: relative;
+}
+#chatRoom #left{
+    width: 300px;
+    height: 600px;
+    float: left;
+    background-color: #e0e0e0;
+    border: 1px solid #BEBEBE;
+}
+#chatRoom #right{
+    margin-left: 310px;
+    height: 600px;
+    width: 100%;
+    background-color:white;
+    border: 0.5px solid #BEBEBE;
+}
+#top{
+    background-color: #272727;
+    width: 300px;
+    height: 50px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#topR{
+    background-color: #3C3C3C;
+    width: 100%;
+    height: 50px;
+    color: aliceblue;
+    line-height: 50px;
+}
+#topR span{
+    margin-left: 50px;
+}
+.client{
+    list-style: none;
+    width: 270px;
+    height: 60px;
+    background-color: #d0d0d0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+#content{
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    bottom: 0;
+    border-top:0.5px solid #BEBEBE;
+}
+#content input{
+    width: 98%;
+    margin-left: 5px;
+    margin-top: 2px;
+    height: 140px;
+    border: none;
+    outline: none;
+}
+#content button{
+    position: absolute;
+    margin-top: 5px;
+    right: 5px;
+}

@@ -1,0 +1,39 @@
+<!-- 聊天室界面 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ChatGUI</title>
+        <link href="./chat.css" rel="stylesheet">
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="chatMsg">
+            <div id="userName"></div>
+            <div id="signOut">退出</div>
+        </div>
+        <div id="chatRoom">
+            <div id="left">
+                <div id="top"><span>在线成员</span></div>
+                <div id="online_client">
+                    <!-- <li class="client"></li> -->
+                </div>
+            </div>
+            <div id="right">
+                <div id="topR">
+                    <span id="title">聊天室</span>
+                </div>
+                <div id="middle">
+
+                </div>
+                <div id="content">
+                    <div><input type="text" id="text"></div>
+                    <button id="send" onclick="sendMsg()">发送</button>
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <!-- <script src="http://localhost:SOCKET_IO_PORT/socket.io/socket.io.js"></script> -->
+        <script src="./chat.js"></script>
+    </body>
+</html>

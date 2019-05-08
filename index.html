@@ -1,0 +1,27 @@
+<!-- 入口文件，也是登录界面 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="./index.css">
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="login">           
+            <div id="msg">
+                <div class="loginMsg">
+                    <input type="text" id="name" placeholder="请输入用户名" />
+                </div>
+                <div class="loginMsg">
+                    <input type="text" id="passwd" placeholder="请输入密码" />
+                </div>
+                <div class="postMsg">
+                    <button id="btn" onclick="getMsg()">登录</button>
+                </div>
+            </div>            
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
