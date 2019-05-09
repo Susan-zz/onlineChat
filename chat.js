@@ -78,6 +78,7 @@ $(function () {
     //点击聊天室时返回
     backroom.click(function () {
         title[0].innerHTML = '聊天室';
+        tempText = '聊天室';
     })
     // 监听中途的成员离开
     socket.on('user left', function (data) {
