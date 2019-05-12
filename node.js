@@ -60,10 +60,10 @@ io.on('connection', function (socket) {
   socket.on('message', function (msg, uname) {
 
     if (uname in usocket) {
-      usocket[uname].emit('receive', uname, username, msg);
-      socket.emit('all', msg);
+      usocket[uname].emit('receive', username, msg);
+      socket.emit('private', msg);
     } else {
-      io.sockets.emit('all', msg);
+      io.sockets.emit('all', msg,username);
     }
   })
 

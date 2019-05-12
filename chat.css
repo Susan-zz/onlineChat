@@ -72,7 +72,8 @@ body{
     margin-left: 50px;
 }
 #middle{
-    height: 100%;
+    height: 370px;
+    overflow-y:scroll
 }
 .client{
     list-style: none;

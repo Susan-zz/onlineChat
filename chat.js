@@ -7,7 +7,7 @@ var title = $('#title');
 var middle = $('#middle');
 var sign = $('#signOut');
 var backroom = $('#backroom');
-var tempText = '聊天室';
+var tempText = '广场';
 
 //根据cookie获取当前用户名
 function getCookie(name) {
@@ -32,6 +32,7 @@ function sendMsg() {
     var msg = text.val();
     console.log(msg);
     socket.send(msg, tempText);
+    text.val('');
 }
 
 $(function () {
@@ -49,8 +50,12 @@ $(function () {
         socket.emit('new user', uname);
     })
     //动态显示信息
-    socket.on('all', function (text) {
+    socket.on('private', function (text) {
         var p = '<p>' + text + '</p>';
+        middle.append(p);
+    });
+    socket.on('all', function (text,username) {
+        var p = '<p>' + username + '：' + text + '</p>';
         middle.append(p);
     });
     //点击某个在线用户时，获取到被点击的该元素
@@ -63,8 +68,8 @@ $(function () {
 
     })
     //监听收到信息
-    socket.on('receive', function (rname, sname, msg) {
-        console.log(rname, sname, uname);
+    socket.on('receive', function (sname, msg) {
+        middle[0].innerHTML = "";
         var tip = '<div id="sender" style="background-color:blue;">点我：' + sname + '给你发消息啦</div>';
         room.append(tip);
         room.on('click', '#sender', function () {
@@ -77,8 +82,9 @@ $(function () {
     })
     //点击聊天室时返回
     backroom.click(function () {
-        title[0].innerHTML = '聊天室';
-        tempText = '聊天室';
+        title[0].innerHTML = '广场';
+        middle[0].innerHTML = "";
+        tempText = '广场';
     })
     // 监听中途的成员离开
     socket.on('user left', function (data) {
@@ -87,6 +93,6 @@ $(function () {
     });
     //点击退出
     sign.click(function () {
-        socket.emit('disconnect');
+        window.location.href = './';
     })
 })

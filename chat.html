@@ -15,21 +15,21 @@
         <div id="chatRoom">
             <div id="left">
                 <div id="top"><span>在线成员</span></div>
-                <div id="backroom"><span>聊天室</span></div>
+                <div id="backroom"><span>广场</span></div>
                 <div id="online_client">
                     <!-- <li class="client"></li> -->
                 </div>
             </div>
             <div id="right">
                 <div id="topR">
-                    <span id="title">聊天室</span>
+                    <span id="title">广场</span>
                 </div>
                 <div id="middle">
-
+                   
                 </div>
                 <div id="content">
-                    <div><input type="text" id="text"></div>
-                    <button id="send" onclick="sendMsg()">发送</button>
+                    <div><input type="text" id="text" onkeydown='if(event.keyCode==13) sendMsg();'></div>
+                    <button id="send" onclick="sendMsg()" type=”submit”>发送</button>
                 </div>
             </div>
         </div>
