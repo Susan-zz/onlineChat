@@ -26,11 +26,6 @@ app.use('*', function (req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-// app.get('/', function (req, res) {
-//   res.send('hello world');
-// });
-
 //登录接口
 app.post('/login', function (req, res) {
   username = req.body.name;
